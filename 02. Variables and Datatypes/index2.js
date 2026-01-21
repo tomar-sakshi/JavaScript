@@ -8,7 +8,7 @@
 
 // let a = 20; //integer value
 // let b = 23.45//float value means decimal number
-// console.log(a,b);
+//  console.log(a,b);
 // console.log(typeof a);// number
 
 // String
