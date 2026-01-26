@@ -99,15 +99,27 @@
 
 // Non Primitive data type mutable. (mutable means which value we can change)
 
-let arr = [10, 20, 30, 40, 49];
-arr.push(90);
-arr[0] = 50;
-console.log(arr);
+// let arr = [10, 20, 30, 40, 49];
+// arr.push(90);
+// arr[0] = 50;
+// console.log(arr);
 
-let obj = {
-  name: "Sakshi",
-  age: 27,
-};
-let obj2 = obj;
-obj.name = "Tanu";
-console.log(obj);
+// let obj = {
+//   name: "Sakshi",
+//   age: 27,
+// };
+// let obj2 = obj;
+// obj.name = "Tanu";
+// console.log(obj);
+
+// "" /// falsy
+// 0 // falsy
+// false // falsy
+// undefined // falsy
+// null // falsy
+
+// truthy - true
+// falsy - false
+
+
+
