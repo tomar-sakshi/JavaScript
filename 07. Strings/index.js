@@ -71,7 +71,7 @@
 // trim string
 
 // const user = " Sakshi Tomar ";
-// console.log(user.trim());
+// console.log(user.trim());// it removes space from start and end of the string.
 
 // splitting string
 
