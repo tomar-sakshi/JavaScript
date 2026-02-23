@@ -48,8 +48,27 @@
 // Awswer: Object
 
 // Q10: What happens when you add a number and a string in JavaScript?
+// Answer: When we add number and string then string converted in a number.
+// example...7 + "4" = 74.
+
 // Q11: What is type coercion? Give an example.
-// Q12: How can you manually convert a string to a number in JavaScript?
+// Answer: Type coercion is the automatic conversion of values from one data type to another. Example: string to number, object to boolean.
+
+// Q12: How can you manually convert a string to a number in JavaScript?  
+// Answer: let str = "123";
+// let num = Number(str);
+
+// console.log(num);        // 123
+// console.log(typeof num); // number
+
 // Q13: What is the result of "5" - 3 in JavaScript?
+// Answer: String in converted into number
+// "5"-3 = 2
+
+
 // Q14: What is NaN in JavaScript, and how do you check if a value is NaN?
+// Answer: NaN is Not a Number in javascript
+
+
 // Q15: How do you check the type of a variable in JavaScript?
+// Awswer: To get the data type of a variable, we use the typeof operator.
