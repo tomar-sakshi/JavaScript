@@ -66,7 +66,7 @@
 //   "home address": "Xyz colony",
 // };
   
-// We can used for of loop for array
+// We can use 'for of' loop for array
 
 // const temnparr = Object.keys(user);
 // console.log(temnparr)
