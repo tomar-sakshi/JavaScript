@@ -10,13 +10,13 @@ body.addEventListener("click", (e) => {
   const color = ["red", "blue", "yellow", "violet", "pink", "purple"];
   circleElement.style.backgroundColor = color[Math.floor(Math.random() * 6)];
 
-  circleElement.style.top = `${e.clientY}px`;
-  circleElement.style.left = `${e.clientY}px`;
+  circleElement.style.top = `${e.clientY - 25}px`;
+  circleElement.style.left = `${e.clientX - 25}px`;
 
   body.append(circleElement);
   console.log(body);
 
-  setTimeOut(() => {
+  setTimeout(() => {
     circleElement.remove();
   }, 5000);
 });
