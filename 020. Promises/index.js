@@ -94,53 +94,86 @@ const orderDetail = {
   customer_location: "MohanNagar",
   restaurant_location: "Gzb",
 };
-function placedOrder(orderDetail, Callback) {
+function placedOrder(orderDetail) {
   console.log(`${orderDetail.cost} Payment is in Progress`);
 
-  setTimeout(() => {
+  return new Promise((resolve,reject)=>{
+    setTimeout(() => {
+      if(Math.random()>0.9){
     console.log("Your payment is received and order get placed");
-    orderDetail.status = true;
-    Callback(orderDetail);
+    orderDetail.status = true; 
+    resolve(orderDetail);
+      }
+      else{
+        reject("Payment is failed");
+      }
   }, 3000);
+  })
+  
 }
 
-function preparingOrder(orderDetail, Callback) {
+function preparingOrder(orderDetail) {
   console.log(`Your food preparation started of ${orderDetail.food}`);
 
-  setTimeout(() => {
+  return new Promise((resolve,reject)=>{
+
+   setTimeout(() => {
+    if(Math.random()>0.05){
     console.log("Your order is now prepared");
     orderDetail.token = 12345;
-    Callback(orderDetail);
+    resolve(orderDetail);
+    }
+    else{
+      reject("Food item is not present at restaurant");
+    }
   }, 3000);
-}
+})
+  }
+ 
 
-function pickupOrder(orderDetail, Callback) {
+function pickupOrder(orderDetail) {
   console.log(
     `Delivery boy is on way to pickup order from ${orderDetail.restaurant_location}`,
   );
 
-  setTimeout(() => {
+     return new Promise((resolve,reject)=>{
+      setTimeout(() => {
+       if(Math.random()>0.55){ 
     console.log("I have picked up your order");
     orderDetail.received = true;
-    Callback(orderDetail);
+    resolve(orderDetail);
+       }
+       else{
+        reject("Delivery boy unable to reach restaurant");
+       }
   }, 3000);
-}
+})
+     }
 
 function deliverOrder(orderDetail) {
   console.log(
     `I am on the way to deliver your order ${orderDetail.customer_location}`,
   );
-
-  setTimeout(() => {
+ 
+  return new Promise((resolve,reject)=>{
+    setTimeout(() => {
     console.log("Your Ordered is deliver successfully");
     orderDetail.delivery = true;
+     resolve(orderDetail);
   }, 3000);
+  })
 }
 
-placedOrder(orderDetail, (orderDetail) => {
-  preparingOrder(orderDetail, (orderDetail) => {
-    pickupOrder(orderDetail, (orderDetail) => {
-      deliverOrder(orderDetail);
-    });
-  });
-});
+placedOrder(orderDetail)
+.then((orderDetail)=>preparingOrder(orderDetail))
+.then((orderDetail)=>pickupOrder(orderDetail))
+.then((orderDetail)=>deliverOrder(orderDetail))
+.then((orderDetail)=>{
+  console.log(orderDetail);
+})
+.catch((error)=>{
+  console.log("Error: ", error);
+}).
+finally(()=>{
+  console.log("I am doing cleanup");
+})
