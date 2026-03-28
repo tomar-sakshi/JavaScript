@@ -1,14 +1,18 @@
 //Loops
+// / Initialization: let i = 1; (Start a counter at 1)
+// Condition: i <= 5; (Keep looping as long as i is less than or equal to 5)
+// Final-Expression: i++; (After each loop, add 1 to i
+
 
 // for(let i = 2; i <= 10; i=i+2){
 //   console.log(i + "*");
 // }
 
 // While Loop
-// let i = 1;
-// while (i < 3) {
+// let i = 1;  //Initialization
+// while (i < 3) { // Condition
 //   console.log(i);
-//   i++;
+//   i++; // 
 // }
 
 // Do-While Loop
@@ -70,6 +74,8 @@
 
 // Not Operator (!)
 
-let a =30;
-let b = 30.0;
-let c = a === b;
+// console.log(4!=5);// true
+// console.log(5!=5);// false
+// let a =30;
+// let b = 30.0;
+// let c = a === b;
